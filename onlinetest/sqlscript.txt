@@ -1,0 +1,443 @@
+ Server: localhost  -   Database: test
+ 
+-- phpMyAdmin SQL Dump
+-- version 2.11.6
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Mar 23, 2019 at 10:22 AM
+-- Server version: 5.0.51
+-- PHP Version: 5.2.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `test`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cansdet`
+--
+
+CREATE TABLE `cansdet` (
+  `regcode` int(11) NOT NULL,
+  `qnum` int(11) NOT NULL,
+  `ans` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ccorrans`
+--
+
+CREATE TABLE `ccorrans` (
+  `qnum` int(11) NOT NULL,
+  `ans` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+INSERT INTO `ccorrans` (`qnum`, `ans`) VALUES
+(1, 3),
+(2, 2),
+(3, 4),
+(4, 3),
+(5, 4),
+(6, 2),
+(7, 3),
+(8, 4),
+(9, 4),
+(10, 1),
+(11, 3),
+(12, 1),
+(13, 2),
+(14, 2),
+(15, 2),
+(16, 2),
+(17, 2),
+(19, 3),
+(20, 2),
+(21, 1),
+(22, 1),
+(23, 4),
+(24, 4),
+(25, 4),
+(26, 2),
+(27, 1),
+(28, 1),
+(29, 4),
+(30, 1),
+(31, 2),
+(32, 3),
+(33, 4),
+(34, 1),
+(35, 3),
+(36, 3),
+(37, 2),
+(38, 4),
+(39, 3),
+(40, 2),
+(18, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cquesdet`
+--
+
+CREATE TABLE `cquesdet` (
+  `qnum` int(11) NOT NULL,
+  `question` varchar(300) NOT NULL,
+  `ans1` varchar(200) NOT NULL,
+  `ans2` varchar(200) NOT NULL,
+  `ans3` varchar(200) NOT NULL,
+  `ans4` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cquesdet`
+--
+
+INSERT INTO `cquesdet` (`qnum`, `question`, `ans1`, `ans2`, `ans3`, `ans4`) VALUES
+(1, 'What is the output of the following code snippet?<br/>#include<stdio.h> <br/>main()<br/> {<br/>  int *p = 15; <br/>    printf("%d",*p);<br/> }', '15', 'Garbage value', 'Runtime error', 'Compiler error'),
+(2, 'What is the output of the following program?<br/>#include<stdio.h><br/> main() <br/>{<br/> int x = 65, *p = &x; <br/>   void *q=p;<br/>    char *r=q;  <br/>  printf("%c",*r);<br/> }', 'Garbage character', 'A', '65', 'Compile error'),
+(3, 'What is the output of the following program?<br/>#include<stdio.h><br/> main()<br/> {<br/>     int a[3] = {2,,1};<br/>    printf("%d", a[a[0]]);<br/>  }', '0', '1', '2', 'Compile error'),
+(4, 'For the below definition what is the data type of ‘PI’ <br/>#define PI 3.141', 'Its float ', 'Its double', 'There is no type associated with PI, as it’s  just a text substitution', 'Syntax error, semi colon is missing with the definition of PI'),
+(5, 'What is the output of the following program?<br/> #include<stdio.h><br/> main() <br/>{<br/>   char *s = "Fine"; <br/>   *s = ''N''; <br/>   printf("%s", s); <br/>}', 'Fine', 'Nine', 'Compile error', 'Runtime error'),
+(6, 'How do you specify double constant 3.14 as a long double?', 'By using LD after 3.14', 'By using L after 3.14', 'By using DL after 3.14', 'By using LF after 3.14'),
+(7, 'Which header file can be used to define input/output function prototypes and macros?', 'math.h', 'memory.h', 'stdio.h', 'dos.h'),
+(8, 'Which scanf() statement will you use to scan a float value (a) and double value (b)?<br/>Float a; <br/>   Double b;', 'scanf("%f %f", &a, &b);', 'scanf("%lf % lf ", &a, &b);', 'scanf("%Lf %Lf", &a, &b);', 'scanf("%f %lf", &a, &b);'),
+(9, 'What will be the output of the following program?<br/> #include<stdio.h><br/> int main()<br/> {<br/> const int i = 0;<br/>    printf("%d\\n", i++);  <br/>  return 0;<br/> }', '100', 'infinity', '0', 'return error'),
+(10, 'Which statement can print \\n on the screen?', 'printf("\\\\n");', 'printf("n\\");', 'printf("n");', 'printf(''\\n'');'),
+(11, 'Who is father of C Language?', 'Bjarne Stroustrup	 ', 'James A. Gosling', 'Dennis Ritchie', 'Dr. E.F. Codd'),
+(12, 'C Language developed at _______?', 'AT & T''s Bell Laboratories of USA in 1972', 'AT & T''s Bell Laboratories of USA in 1970', 'Sun Microsystems in 1973', 'Cambridge University in 1972'),
+(13, 'C Language Program can be converted into Machine Language with the help of ', 'An Editor', 'A Compiler', 'An Operating System', 'None of These'),
+(14, 'Standard ANSI C recognizes number of keywords ?', '30', '32', '24', '36'),
+(15, 'Which one of the following is not a reserved keyword for C?', 'auto', 'main', 'case', 'default'),
+(16, 'A C variable cannot start with', 'A number', 'A special symbol other than underscore', 'Both of the above		 	', 'An Alphabet'),
+(17, 'Which one of the following is not a valid identifier?', '_examveda', '1examveda', 'exam_veda', 'examveda1'),
+(19, 'What is the correct value to return to the operating system upon the successful completion of a program?', '(1)', '(-1)', '(0)', 'no return value'),
+(20, 'Which of the following is not a correct variable type?', 'float', 'real', 'short int', 'double'),
+(21, 'Find the output of the following program.<br/> void main() <br/>{<br/>  int i=065, j=65;<br/>    printf("%d %d", i, j); <br/>}', '53  65', '65 65', '065 65', 'double'),
+(22, 'If ASCII value of ''x'' is 120, then what is the value of the H, if H = (''x'' – ''w'' ) / 3;', '0', '1', '2', '3'),
+(23, 'What is the difference between a declaration and a definition of a variable?', 'Both can occur multiple times, but a declaration must occur first.	', 'A definition occurs once, but a declaration may occur many times.', 'Both can occur multiple times, but a definition must occur first.', 'A declaration occurs once, but a definition may occur many times.'),
+(24, '"My salary was increased by 15%" Select the statement, which will EXACTLY reproduce the line of text above.', 'printf("My salary was increased by 15/%!");	  ', 'printf("My salary was increased by 15%!");', 'printf("My salary was increased by 15''%''!");', 'printf("My salary was increased by 15%%!"); '),
+(25, 'Out of the following operators which operator is not a binery operator.', '&&', '%=', '+', '++'),
+(26, 'Find the output of the following program.<br/> void main()<br/> {<br/>   int i=10, j=5;<br/>    ++i; <br/>   J++;<br/>    i+=j++;<br/>    printf("%d %d", ++i,++j);<br/> }', '16 7', '17   8', '16  8', '17 7 '),
+(27, 'In C language the main can take two arguments called', 'argc, argv	', 'void, int', 'declaration, calling', 'char,int'),
+(28, 'What is right way to Initialization array?', 'int num[6] = { 2, 4, 12, 5, 45, 5 } ;', 'int n{} = { 2, 4, 12, 5, 45, 5 } ;', 'int n{6} = { 2, 4, 12 } ;', 'int n(6) = { 2, 4, 12, 5, 45, 5 } ; '),
+(29, 'What is C Tokens?', 'The smallest individual units of c program', 'The basic element recognized by the compiler', 'The largest individual units of program', 'A & B Both'),
+(30, 'What is constant?', 'Constants have fixed values that do not change during the execution of a program.', 'Constants have fixed values that change during the execution of a program', 'Constants have unknown values that may be change during the execution of a program', 'None of the above'),
+(31, 'Which operators are known as Ternary Operator?', '::, ?', '?, :', '?, ;;', '?, :'),
+(32, 'The statement printf(“%c”, 100); will print?', 'prints 100', 'print garbage', 'prints ASCII equivalent of 100', 'None of the above'),
+(33, 'What will be the output of the following statement ? <br/> printf( 3 + “goodbye”);', 'goodbye	', 'odbye', 'bye', 'dbye'),
+(34, 'int testarray[3][2][2] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}; <br/>What value does testarray[2][1][0] in the sample code above contain?', '11', '7', '5', '9'),
+(35, 'What will happen if in a C program you assign a value to an array element whose subscript exceeds the size of array?', 'The element will be set to 0.', 'The compiler would report an error.', 'The program may crash if some important data gets overwritten.', 'The array size would appropriately grow.'),
+(36, 'What will be the output of the following statements ?<br/>  int i = 1,j; j=i--- -2; printf("%d",j); ', 'error', '(2)', '(3)', '(-3)'),
+(37, 'What will be the output of the following statements ?<br/>  int i = 3; printf("%d%d",i,i++); ', '34', '43', '44', '33'),
+(38, 'void main()  <br/>{<br/>     int a=10,b=20; <br/><br/>char x=1,y=0;<br/>     if(a,b,x,y)<br/> {<br/> printf("EXAM"); <br/>}<br/>  }<br/>  What is the output? ', 'EXAM is printed ', 'exam is printed ', 'Compiler Error ', 'Nothing is printed'),
+(39, 'What is Keywords? ', 'Keywords have some predefine meanings and these meanings can be changed. ', 'Keywords have some unknown meanings and these meanings cannot be changed. ', 'Keywords have some predefine meanings and these meanings cannot be changed. ', 'None of the above '),
+(40, 'In an assignment statement a=b; which of the following statement is true ?', 'The variable a and the variable b are same.', 'The value of b is assigned to variable a but if b changes later, it will not effect the value of variable a.', 'The value of b is assigned to variable a but if b changes later, it will effect the value of variable a', 'The value of variable a is assigned to variable b, and the value of variable b is asssigned to variable a.'),
+(18, 'What is the output of the following code snippet?<br/>  #include<stdio.h> <br/> main() <br/> {<br/>    int x = 5;<br/>        if(x=5) <br/>   {	  <br/>     if(x=5)<br/> printf("Hello"); <br/>   }   <br/>  printf("Hi");<br/> }', 'HelloHi', 'Hi', 'Hello', 'Compiler Error');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `javaansdet`
+--
+
+CREATE TABLE `javaansdet` (
+  `regcode` int(11) NOT NULL,
+  `qnum` int(11) NOT NULL,
+  `ans` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `javacorrans`
+--
+
+CREATE TABLE `javacorrans` (
+  `qnum` int(11) NOT NULL,
+  `ans` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `javacorrans`
+--
+
+INSERT INTO `javacorrans` (`qnum`, `ans`) VALUES
+(1, 2),
+(2, 2),
+(3, 1),
+(4, 3),
+(5, 1),
+(6, 2),
+(7, 3),
+(8, 1),
+(9, 2),
+(10, 1),
+(11, 4),
+(12, 1),
+(13, 2),
+(14, 4),
+(15, 2),
+(16, 2),
+(17, 1),
+(18, 4),
+(19, 3),
+(20, 4),
+(21, 1),
+(22, 3),
+(23, 3),
+(24, 4),
+(25, 3),
+(26, 3),
+(27, 4),
+(28, 1),
+(29, 4),
+(30, 3),
+(31, 2),
+(32, 4),
+(31, 2),
+(32, 4),
+(33, 2),
+(34, 4),
+(35, 3),
+(36, 3),
+(37, 3),
+(38, 2),
+(39, 3),
+(40, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `javaquesdet`
+--
+
+CREATE TABLE `javaquesdet` (
+  `qnum` int(11) NOT NULL,
+  `question` varchar(400) NOT NULL,
+  `ans1` varchar(200) NOT NULL,
+  `ans2` varchar(200) NOT NULL,
+  `ans3` varchar(200) NOT NULL,
+  `ans4` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `javaquesdet`
+--
+
+INSERT INTO `javaquesdet` (`qnum`, `question`, `ans1`, `ans2`, `ans3`, `ans4`) VALUES
+(1, ' ________ is the ability of an Java application to perform multiple tasks at the same time.', 'Multiprogramming', 'Multithreading', 'Multiprocessing', 'Multitasking'),
+(2, 'Java is designed for the distributed environment of the Internet, because it handles ________ protocols', 'UDP ', 'TCP/IP', ' FTP ', 'TEL'),
+(3, 'Java is associated with _______ programming Language', 'Oak ', 'Basic', 'C', 'Perl'),
+(4, 'Which of the following is Java keyword?', 'external ', 'implement', 'throw ', 'Integer'),
+(5, 'A compiler converts the Java program into an intermediate language representation called', 'bytecode', 'byte', 'byteclass', 'bytejava'),
+(6, '_______ Operator is used to create an object.', 'class ', ' new', 'print', ' main'),
+(7, 'Which of the following method is used to initialize the instance variable of a class.', 'Class', 'Public', 'Constructor', 'Destructor _'),
+(8, 'Java platform consists of JVM and a package of readymade software components this package is known as ________.', 'Java API ', 'JVM API', 'JM API', 'API'),
+(9, 'Which of the following is not a Looping statement ________ .', 'FOR', 'Switch', 'while', 'Do-While'),
+(10, '________ is a multi way branch statement', 'Switch', 'continue', 'break', 'Label'),
+(11, 'Choose the proper operator precedence when evaluating an Expression? <br/>1. Comparisons <br/>2. Logical operations <br/>3. Increment <br/>4. Arithmetic operations', '1-2-4-3 ', '4-3-1-2', '2-1-4-3', '3-4-1-2'),
+(12, 'The ______ statement is used inside the switch to terminate a Statement sequence', 'break ', 'Jump', 'exit', 'goto'),
+(13, 'A class that is inherited is called a ______ .', 'superclass', 'Subclass', 'subsetclass ', 'Relativeclass'),
+(14, 'An _________ determines which features of a class may be used by other classes', ' specifier ', 'inheritance ', 'implementation', 'Access specifier'),
+(15, 'Which of the following is WRONG statement with respect to rules for overriding Methods?', 'The method name and the order of arguments should be identical to that of the super class method. ', 'The return type of both the methods must be the different. ', 'The overriding method cannot be less accessible than the method it overrides.', 'An overriding method cannot raise more exceptions than those raised by the super class.'),
+(16, 'The class at the top of the exception classes hierarchy is called ________.', 'Common ', 'Throwable.', 'NULL', 'Catch'),
+(17, 'Consider the following program: <br/>import myLibrary.*; <br/>public class ShowSomeClass <br/>{<br/> // code for the class…<br/> }<br/> What is the name of the java file containing this program?', 'ShowSomeClass.java ', 'ShowSomeClass ', 'ShowSomeClass.class', 'Any file name with the java suffix will do'),
+(18, 'Which of the following is TRUE?', 'In java, an instance field declared public generates a compilation error. ', 'int is the name of a class available in the package java.lang', 'Instance variable names may only contain letters and digits.', 'A class has always a constructor (possibly automatically supplied by the java compiler).'),
+(19, 'Consider the following code snippet<br/> String river = new String(“Columbia”); <br/>System.out.println(river.length());<br/> What is printed?', '6', '7', '8', 'Columbia'),
+(20, 'Which of the following may be part of a class definition?', 'instance variables ', 'instance methods ', 'constructors', 'all of the above'),
+(21, 'Consider <br/>public class MyClass<br/>{<br/> public MyClass()<br/>{<br/>/*code*/<br/>}<br/> // more code… } <br/>To instantiate MyClass, you would write?', 'MyClass mc = new MyClass(); ', 'MyClass mc = MyClass();', 'MyClass mc = MyClass;', 'MyClass mc = new MyClass;'),
+(22, '', '', '', '', ''),
+(22, 'To prevent any method from overriding, we declare the method as,', 'static (b) (c)  (d) ', 'const ', 'final', 'abstract '),
+(23, 'Which one of the following is not true?', 'A class containing abstract methods is called an abstract class. ', 'Abstract methods should be implemented in the derived class.', ' An abstract class cannot have non-abstract methods.', ' A class must be qualified as ‘abstract’ class, if it contains one abstract method.'),
+(24, 'The fields in an interface are implicitly specified as,', 'static only ', 'protected ', 'private ', 'both static and final '),
+(25, 'Which of the following is not true?', 'An interface can extend another interface. ', 'A class which is implementing an interface must implement all the methods of the interface. ', 'An interface can implement another interface. ', 'An interface is a solution for multiple inheritance in java.'),
+(26, 'Which of the following is true?', 'A finally block is executed before the catch block but after the try block. ', 'A finally block is executed, only after the catch block is executed.', 'A finally block is executed whether an exception is thrown or not.', 'A finally block is executed, only if an exception occurs.'),
+(27, 'Consider the following class definition:<br/>public class MyClass<br/> {<br/> private int value;<br/> public void setValue(int i)<br/>{<br/> / code /<br/> }<br/> // Other methods… <br/>} <br/>The method setValue assigns the value of i to the instance field value. What could you write for the implementation of setValue?', 'value = i; ', 'this.value = i;', 'value == i;', 'Both (A) and (B) and above '),
+(28, 'The correct order of the declarations in a Java program is,', ' Package declaration, import statement, class declaration ', 'Import statement, package declaration, class declaration ', 'Import statement, class declaration, package declaration ', 'Class declaration, import statement, package declaration'),
+(29, 'An overloaded method consists of,', 'The same method name with different types of parameters ', 'The same method name with different number of parameters ', 'The same method name and same number and type of parameters with different return type', 'Both (a) and (b) above'),
+(30, 'A protected member can be accessed in,', 'a subclass of the same package ', 'a non-subclass of the same package', 'a non-subclass of different package', 'a subclass of different package'),
+(31, 'What is the output of the following code:<br/> class eq <br/>{<br/> public static void main(String args[]) <br/>{<br/> String s1 = “Hello”;<br/> String s2 = new String(s1);<br/> System.out.println(s1==s2); <br/>}<br/> }', 'true', 'false', '0', '1'),
+(32, 'All exception types are subclasses of the built-in class', 'Exception', 'RunTimeException', 'Error', 'Throwable'),
+(33, 'When an overridden method is called from within a subclass, it will always refer to the version of that method defined by the', 'Super class', 'Subclass', 'Compiler will choose randomly', 'Interpreter will choose randomly'),
+(34, 'Mark the incorrect statement from the following:', 'Java is a fully object oriented language with strong support for proper software engineering techniques', 'In java it is not easy to write C-like so called procedural programs', 'In java language objects have to be manipulated', 'In java language error processing is built into the language'),
+(35, 'In java, objects are passed as', 'Copy of that object ', 'Method called call by value', 'Memory address', 'Constructor'),
+(36, 'Which of the following is not a component of Java Integrated Development Environment (IDE)?', 'Net Beans ', 'Borland’s Jbuilder', 'Symantec’s Visual Café', ' Microsoft Visual Fox Pro'),
+(37, ' ……………….. are used to document a program and improve its readability.', 'System calls ', 'Keywords', 'Comments', 'Control structures'),
+(38, '', '', '', '', ''),
+(38, 'Consider the following statements about Java packages:<br/> I. Packages don’t provide a mechanism to partition all class names into more manageable chunks. <br/>II. Packages provide a visibility control mechanism. <br/>III. One of the important properties of a package is that all classes defined inside a package is accessible by code outside that package. <br/>IV. The .class files for classes decl', 'Only (I) above ', 'Only (II) above', 'Only (III) above  ', 'Only (IV) above'),
+(39, 'Consider the following statements:<br/> I. A class can be declared as both abstract and final.<br/> II. A class declared as final can be extended by defining a sub-class.<br/> III. Resolving calls to methods dynamically at run-time is called late binding.<br/> IV. The class Object defined by Java need not be a super class of all other classes. <br/>Identify the correct statement from the following', 'Both (I) and (II) above ', 'Both (III) and (IV) above', 'Only (III) above.', 'Both (I) and (III) above '),
+(40, 'Identify, from among the following, the incorrect descriptions related to Java :', ') Java Virtual Machine translates byte code into its own system’s machine language and runs the resulting machine code', ') The arithmetic operations *, /, %, + and – have the same level of precedence', ' Comments do not cause any action to be performed during the program execution', 'All variables must be given a type when they are declared');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `logindet`
+--
+
+CREATE TABLE `logindet` (
+  `regcode` int(11) NOT NULL,
+  `studname` varchar(40) NOT NULL,
+  `course` varchar(40) NOT NULL,
+  `yearnsem` varchar(20) NOT NULL,
+  PRIMARY KEY  (`regcode`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `moduledet`
+--
+
+CREATE TABLE `moduledet` (
+  `regcode` int(11) NOT NULL,
+  `modname` varchar(20) NOT NULL,
+  `result` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `phpansdet`
+--
+
+CREATE TABLE `phpansdet` (
+  `regcode` int(11) NOT NULL,
+  `qnum` int(11) NOT NULL,
+  `ans` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `phpcorrans`
+--
+
+CREATE TABLE `phpcorrans` (
+  `qnum` int(11) NOT NULL,
+  `ans` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `phpcorrans`
+--
+
+INSERT INTO `phpcorrans` (`qnum`, `ans`) VALUES
+(1, 4),
+(2, 1),
+(3, 1),
+(4, 4),
+(5, 2),
+(6, 1),
+(7, 4),
+(8, 1),
+(9, 3),
+(10, 2),
+(11, 4),
+(12, 2),
+(13, 3),
+(14, 4),
+(15, 4),
+(16, 2),
+(17, 2),
+(18, 1),
+(19, 2),
+(20, 4),
+(21, 3),
+(22, 4),
+(23, 3),
+(24, 2),
+(25, 1),
+(26, 3),
+(27, 2),
+(28, 4),
+(29, 3),
+(30, 3),
+(31, 1),
+(32, 4),
+(33, 3),
+(34, 1),
+(35, 1),
+(36, 1),
+(37, 1),
+(38, 2),
+(39, 2),
+(40, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `phpquesdet`
+--
+
+CREATE TABLE `phpquesdet` (
+  `qnum` int(11) NOT NULL,
+  `question` varchar(300) NOT NULL,
+  `ans1` varchar(100) NOT NULL,
+  `ans2` varchar(100) NOT NULL,
+  `ans3` varchar(100) NOT NULL,
+  `ans4` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `phpquesdet`
+--
+
+INSERT INTO `phpquesdet` (`qnum`, `question`, `ans1`, `ans2`, `ans3`, `ans4`) VALUES
+(1, 'PHP Stands for?', 'PHP Hypertex Processor', 'PHP Hyper Markup Processor', 'PHP Hyper Markup Preprocessor', 'PHP Hypertext Preprocessor'),
+(2, 'PHP is an example of ___________ scripting language.', 'Server-side', 'Client-side', 'Browser-side', 'In-side'),
+(3, 'Who is known as the father of PHP?', 'Rasmus Lerdorf', 'Willam Makepiece', 'Drek Kolkevi', 'List Barely'),
+(4, 'Which of the following is not true?', 'PHP can be used to develop web application', 'PHP makes a website dynamic', 'PHP applications can not be compile', 'PHP can not be embedded into html.'),
+(5, 'Which of the following variables is not a predefined variable?', '$get', '$ask', '$request', '$post'),
+(6, 'Which of the following method sends input to a script via a URL?', 'Get', 'Post', 'Both', 'None'),
+(7, 'Which of the following function returns the number of characters in a string variable?', 'count($variable)', 'len($variable)', 'strcount($variable)', 'strlen($variable)'),
+(8, 'PHP files have a default file extension of ____', '.html', '.xml', '.php', '.ph'),
+(9, 'Which of the looping statements is/are supported by PHP?<br/>i) for loop <br/>ii) while loop <br/>iii) do-while loop <br/>iv) foreach loop', '(i) and (ii)', '(i), (ii) and (iii)', 'All of the mentioned', 'None of the mentioned'),
+(10, 'Which of the following is/are a PHP code editor?<br/> i) Notepad <br/>ii) Notepad++ <br/>iii) Adobe Dreamweaver<br/>iv) PDT', 'Only (iv)', 'All of the mentioned.', '(i), (ii) and (iii)', 'Only (iii)'),
+(11, 'Which of the following must be installed on your computer so as to run PHP script?<br/> i) Adobe Dreamweaver <br/>ii) PHP <br/>iii) Apache <br/>iv) IIS', 'All of the mentioned', 'Only (ii)', '(ii) and (iii)', '(ii), (iii) and (iv)'),
+(12, 'Which version of PHP introduced Try/catch Exception?', 'PHP 4', 'PHP 5', 'PHP 5.3', 'PHP 6'),
+(13, 'Which of the following php statement/statements will store 111 in variable num? <br/>i) int $num = 111; <br/>ii) int mum = 111; <br/>iii) $num = 111; <br/>iv) 111 = $num;', 'Both (i) and (ii)', 'All of the mentioned.', 'Only (iii)', 'Only (i)'),
+(14, 'Which of following variables can be assigned a value to it? <br/>(i) $3hello <br/>(ii) $_hello <br/>(iii) $this <br/>(iv) $This', 'All of the mentioned', 'Only (ii)', '(ii), (iii) and (iv)', '(ii) and (iv)'),
+(15, 'If $a = 12 what will be returned when ($a == 12) ? 5 : 1 is executed?', '12', '1', 'Error', '5'),
+(16, 'Which of the following PHP statements will output Hello World on the screen?<br/>(i) echo (“Hello World”);<br/>(ii) print (“Hello World”);<br/> (iii) printf (“Hello World”);<br/> (iv) sprintf (“Hello ', '(i) and (ii)', '(i), (ii) and (iii)', 'All of the mentioned', '(i), (ii) and (iv)'),
+(17, 'Which of the below statements is equivalent to $add += $add ?', '$add = $add', '$add = $add +$add', '$add = $add + 1', '$add = $add + $add + 1'),
+(18, 'Which statement will output $x on the screen?', 'echo “\\$x”;', 'echo “$$x”;', 'echo “/$x”;', 'echo “$x;'),
+(19, 'Which of the following statements is/are true about Constructors in PHP? <br/>(i) PHP 4 introduced class constructors. <br/> (ii) Constructors can accept parameters. <br/> (iii) Constructors can call ', '(ii) and (iii)', 'All of the mentioned', 'None of the mentioned', '(ii), (iii) and (iv)'),
+(20, 'PHP recognizes constructors by the name.', 'classname()', '_construct()', 'function _construct()', 'function __construct()'),
+(21, 'Which one of the following functions is used to determine object type?', 'obj_type()', 'type()', 'is_a()', 'is_obj()'),
+(22, 'Which keyword is used to refer to properties or methods within the class itself?', 'private', 'public', 'protected', '$this'),
+(23, 'Which keyword allows class members (methods and properties) to be used without needing to instantiate a new instance of the class?', 'protected', 'final', 'static', 'private'),
+(24, 'Which one of the following PHP functions can be used to build a function that accepts any number of arguments?', 'func_get_argv()', 'func_get_argc()', 'get_argv()', 'get_argc()'),
+(25, 'Which one of the following PHP functions can be used to find files?', 'glob()', 'file()', 'fold()', 'get_file()'),
+(26, 'The updated MySQL extension released with PHP 5 is typically referred to as..', 'MySQL', 'mysql', 'mysqli', 'mysqly'),
+(27, 'Which one of the following statements instantiates the mysqli class?', 'mysqli = new mysqli()', '$mysqli = new mysqli()', '$mysqli->new.mysqli()', 'mysqli->new.mysqli()'),
+(28, 'Which one of the following statements can be used to select the database?', '$mysqli=select_db(‘databasename’);', 'mysqli=select_db(‘databasename’);', 'mysqli->select_db(‘databasename’);', '$mysqli->select_db(‘databasename’);'),
+(29, 'Which one of the following methods can be used to diagnose and display information about a MySQL connection error?', 'connect_errno()', 'connect_error()', 'mysqli_connect_errno()', 'mysqli_connect_error()'),
+(30, 'If there is no error, then what will the error() method return?', 'TRUE', 'FALSE', 'Empty String', '0'),
+(31, 'What does SPL stand for?', 'Standard PHP Library', 'Source PHP Library', 'Standard PHP List', 'Source PHP List'),
+(32, 'Which of the following is/are not an exception? <br/>(i) BadFunctionCallException  <br/>(ii) BadMethodCallException  <br/>(iii) LogicException <br/> (iv) DomainException', 'All of the mentioned', 'Only (iv)', '(iii) and (iv)', 'None of the mentioned'),
+(33, 'The attack which involves the insertion of malicious code into a page frequented by other users is known as..', 'basic sql injection', 'advanced sql injection', 'cross-site scripting', 'scripting'),
+(34, 'Which one of the following should not be used while sending passwords or other sensitive information?', 'GET', 'POST', 'REQUEST', 'NEXT'),
+(35, 'To validate an e-mail address, which flag is to be passed to the function filter_var()?', 'FILTER_VALIDATE_EMAIL', 'FILTER_VALIDATE_MAIL', 'VALIDATE_EMAIL', 'VALIDATE_MAIL'),
+(36, 'Which of the following variable is used to get user''s browser and operating system details in PHP?', 'HTTP_USER_AGENT', 'USER', 'AGENT', 'None of the above.'),
+(37, 'Which of the following are correct ways of creating an array?<br/> (i) state[0] = “karnataka”; <br/>(ii) $state[] = array(“karnataka”); <br/>(iii) $state[0] = “karnataka”; <br/>(iv) $state = array(“karnataka”);', '(iii) and (iv)', '(ii) and (iii)', 'Only (i)', '(ii), (iii) and (iv)'),
+(38, 'Which function will return true if a variable is an array or false if it is not?', 'this_array()', 'is_array()', 'do_array()', 'in_array()'),
+(39, 'What will be the output of the following php code <br/>< ?php<br/>  $num  = 1;<br/> $num1 = 2;<br/> print $num . "+". $num1 ; <br/>?>', '3', '1+2', '1.+.2', 'Error'),
+(40, 'What will be the output of the following php code?<br/> < ?php  <br/>$num  = "1";<br/> $num1 = "2";<br/> print $num+$num1 ; <br/>?>', '3', '1+2', 'Error', '12');
+
+-- --------------------------------------------------------
+
